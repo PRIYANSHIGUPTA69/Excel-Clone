@@ -18,7 +18,7 @@ let allSheet = {
         fontFamily: "sans-serif",
         color: "",
         bColor: "",
-        align: "",
+        align: "left",
         formula: "",
         value: "",
         children: [],

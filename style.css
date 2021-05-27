@@ -1,11 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
-
+html{
+    font-size: 100%;
+}
 *{
+    
     box-sizing: border-box;
+    
 }
 body{
+    box-sizing: border-box;
     margin: 0px;
+   border-left:4px solid #217346;
+   border-right:4px solid #217346
 }
 .menu {
     display: flex;
@@ -65,6 +72,7 @@ body{
       margin-top: .5rem;
     margin-right: 1rem;
     padding: 3px 5px;
+    font-size: 1rem;
   }
   
   .menu__filemenu > *:hover {
@@ -74,7 +82,7 @@ body{
   }
 .main-container{
     display: flex;
-    height: 8rem;
+   height: 8rem;
      flex-wrap: nowrap;
     white-space: nowrap;
     overflow-x: auto;
@@ -92,12 +100,17 @@ body{
   }
 
 .font-size{
-    min-width:70px;
-   
+    min-width:3rem;
+   height:80%;
+   font-size: 1rem;
+    font-weight: bold;
 }
 
 .font-family{
-    min-width: 100px
+    min-width: 5rem;
+    height:80%;
+    font-size: 1rem;
+    font-weight: bold;
 }
 .main-container >*{
     margin-right: 1rem;
@@ -207,17 +220,15 @@ background-color:rgb(247, 247, 247);
 
 }
 
-.box{
+.left_box{
+    background-color: gray;
     height: 2rem;
-    width:2rem;
-    background-color: rgb(233, 233, 233); 
+    min-width:2rem;
     border: 1px solid #ccc;
     text-align: center;
     padding-top: 5px;
-}
-.left_box{
-    background-color: gray
-   
+    z-index: 100;
+   position: absolute;
 }
 .box:hover{
     background-color: rgb(177, 238, 177);
@@ -230,17 +241,65 @@ background-color:rgb(247, 247, 247);
     position: absolute;
     top: 0;
     padding-top: 0.5rem;
-    left: 2rem
+    left: 2rem;
+    overflow: auto;
+    z-index: 90;
     
 }
+.left_col{
+    width:2rem;
+    position: absolute;
+    top:2rem;
+    z-index:90
+}
 
+.box{
+    
+    width:2rem;
+    background-color: rgb(233, 233, 233); 
+  
+    text-align: center;
+    padding-top: 5px;
+    height: 2rem;
+    border: 1px solid #ccc;
+    
+ 
+    
+}
+.left-col-box{
+    border: 1px solid lightgray;
+ 
+  background-color: #f1f3f4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #555;
+}
 .cell{
     min-width:5rem;
-    height:100%;
-    border:1px solid #ccc;
-    text-align: center; 
+    border: 1px solid lightgray;
+    min-height: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 3px; 
     
     
+}
+.cell:focus{
+    outline: none;
 }
 
   
@@ -260,13 +319,28 @@ background-color:rgb(247, 247, 247);
     top: 2rem;
     
 }
-
+.grid .cell{
+    display: block;
+  overflow: auto;
+  max-width: 5rem;
+}
+.grid .cell:hover {
+    border: 1px solid #49833c;
+  }
 .row{
-    width:100%;
-    height: 2rem;
+   
+    
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
-
+.row .col::-webkit-scrollbar {
+    display: none;
+  }
+  .row .cell {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
 .sheet-container{
     height: 2rem;
@@ -276,15 +350,17 @@ background-color:rgb(247, 247, 247);
 }
 .add-button{
     height: 100%;
-    min-width: 60px;
+    min-width: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;
+    margin-left: 1rem;
     border-right: 1px solid gray;
-    border-radius: 30px 30px 30px 30px;
+    border-radius: .6rem ;
     box-shadow: 4px 6px 14px 6px rgb(255 255 255 / 25%);
     background-color: #49833c;
+   margin-bottom: 0.2rem;
 }
 .sheet-list{
     width: calc( 100vw - 3rem);
@@ -294,6 +370,7 @@ background-color:rgb(247, 247, 247);
     overflow: auto;
     color: #444;
     padding: 0 20px;
+    
 }
     
 
@@ -315,3 +392,97 @@ background-color:rgb(247, 247, 247);
 }
 
 
+.sheet-options-modal {
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 8px 16px 0 lightgray;
+  bottom: 4vh;
+}
+
+.sheet-modal-parent {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top:0;
+  background-color: rgba(68, 68, 68, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sheet-delete-modal {
+  height:15rem;
+  top:calc( ( 100vh - 10rem ) / 2);
+ 
+  left:25rem;
+position: absolute;
+  background-color:white;
+  box-shadow: 0 8px 16px 0 rgb(88, 88, 88);
+  padding: 15px;
+  min-width: 400px;
+  width: 30vw;
+}
+
+.sheet-modal-title {
+  text-align: center;
+  font-size: 26px;
+  color: #217346;
+  font-weight: bold;
+}
+
+.sheet-modal-input-container, .sheet-modal-detail-container {
+  padding: 20px;
+}
+
+.sheet-modal-detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+.yes-button{
+  background-color: #217346;
+  height: 2rem;
+  width: 5rem;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bolder;
+  border-radius: 7%;
+}
+.no-button{
+  background-color: rgb(187, 27, 27);
+  height: 2rem;
+  width: 5rem;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bolder;
+  border-radius: 3%;
+}
+.delete-icon{
+  font-size: 1rem;
+}
+.sheet-modal-input-title, .sheet-modal-detail-title{
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.sheet-modal-input {
+  width: 100%;
+  height: 2rem;
+  font-size: 1.2rem;
+  outline-color: #217346;
+}
+
+.sheet-modal-confirmation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 15px;
+}

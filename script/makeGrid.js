@@ -9,6 +9,7 @@ let cols = 26;
 
 for(let i=0; i<rows; i++){
     let col_box=  document.createElement("div");
+    col_box.setAttribute("class", "left-col-box");
     col_box.setAttribute("class", "box");
     col_box.innerText= i+1;
     leftCol.appendChild(col_box)
@@ -17,6 +18,7 @@ for(let i=0; i<rows; i++){
  for(let j=0; j<cols; j++){
      let cell =  document.createElement("div");
      cell.setAttribute("class", "cell");
+     //cell.setAttribute("class", "cell");
      cell.innerText = String.fromCharCode(j+65)
      top_row.appendChild(cell);
   }

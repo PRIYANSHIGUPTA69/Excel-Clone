@@ -13,13 +13,14 @@
 </head>
 
 <body>
+    <div class="container">
     <div class="menu">
     <div class="menu__top">
        
         <i class="far fa-file-excel menu__logo"></i>
         <div class="menu__file">
             <div class="menu__title">
-                <input value="Untitled Spreadsheet" type="text" id="menu__title-input" />
+                <input value="Enter File Name" type="text" id="menu__title-input" />
             </div>
             <div class="menu__filemenu">
                 <div class="menu__new">New</div>
@@ -50,7 +51,7 @@
 
             </i>
             <div class="btn--fontColor">
-                <i class="fas fa-font "> </i>
+                <i class="fas fa-fill"></i>
                 <input type="color" class="btn--colorDiv hidden" />
                 
             </div>
@@ -83,7 +84,7 @@
         <input type="text" class="formula-input">
     </div>
     <div class="grid-container">
-        <div class="left_box box"></div>
+        <div class="left_box "></div>
         <div class="top_row"></div>
         <div class="left_col">
              <!-- <div class="grid__left-col-box"  or ="box"></div> -->
@@ -98,13 +99,13 @@
             <div class="sheet active" idx="0">Sheet 1</div>
         </div>
     </div>
-    <script src="makeGrid.js"></script>
-
-    <script src="makeSheets.js"></script>
-    <script src="selector.js"></script>
-    <script src="grid.js"></script>
-    <script src="script.js"></script>
-    
+    </div>
+    <script src=".\script\makeGrid.js"></script>
+    <script src=".\script\makeSheets.js"></script>
+    <script src=".\script\selector.js"></script>
+    <script src=".\script\grid.js"></script>
+    <script src=".\script\infixEvaluation.js"></script>
+    <script src=".\script\formula.js"></script>  
 </body>
 
 </html>
