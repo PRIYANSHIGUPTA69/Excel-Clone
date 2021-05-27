@@ -95,7 +95,7 @@ body{
     border-bottom: 1px solid lightgray;
     
 }
-.menu__formatting::-webkit-scrollbar {
+.main-container::-webkit-scrollbar {
     display: none;
   }
 
@@ -453,7 +453,7 @@ position: absolute;
   border-radius: 7%;
 }
 .no-button{
-  background-color: rgb(187, 27, 27);
+  background-color: rgb(161, 3, 3);
   height: 2rem;
   width: 5rem;
   color: white;
