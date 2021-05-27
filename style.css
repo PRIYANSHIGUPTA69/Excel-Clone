@@ -380,6 +380,7 @@ background-color:rgb(247, 247, 247);
     align-items: center;
     height: 100%;
     min-width: 100px;
+    position: absolute;
 }
 .active{
     background-color: #fff;
